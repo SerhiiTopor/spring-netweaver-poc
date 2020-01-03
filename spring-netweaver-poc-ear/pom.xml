@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.spring.poc</groupId>
+        <artifactId>spring-netweaver-poc</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>spring-netweaver-poc-ear</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>ear</packaging>
+    <description>Demo project for Spring Boot</description>
+    <name>spring-netweaver-poc-ear</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.spring.poc</groupId>
+            <artifactId>spring-netweaver-poc-war</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>war</type>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <fileNameMapping>no-version</fileNameMapping>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <skinnyWars>true</skinnyWars>
+                    <applicationName>spring-netweaver-poc-ear</applicationName>
+                    <displayName>SpringNetweaverPocEar</displayName>
+                    <finalName>spring-netweaver-poc-ear</finalName>
+                    <modules>
+                        <webModule>
+                            <groupId>com.spring.poc</groupId>
+                            <artifactId>spring-netweaver-poc-war</artifactId>
+                            <contextRoot>/</contextRoot>
+                            <bundleFileName>spring-netweaver-poc-war</bundleFileName>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
