@@ -1,4 +1,4 @@
-package com.spring.poc.demo;
+package com.spring.poc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

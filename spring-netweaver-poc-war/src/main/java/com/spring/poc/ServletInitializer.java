@@ -1,4 +1,4 @@
-package com.spring.poc.demo;
+package com.spring.poc;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

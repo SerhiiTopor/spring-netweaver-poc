@@ -32,16 +32,16 @@
                 <artifactId>maven-ear-plugin</artifactId>
                 <version>3.0.2</version>
                 <configuration>
-                    <fileNameMapping>no-version</fileNameMapping>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <skinnyWars>true</skinnyWars>
                     <applicationName>spring-netweaver-poc-ear</applicationName>
-                    <displayName>SpringNetweaverPocEar</displayName>
+                    <displayName>SpringNetweaverEar</displayName>
                     <finalName>spring-netweaver-poc-ear</finalName>
                     <modules>
                         <webModule>
                             <groupId>com.spring.poc</groupId>
                             <artifactId>spring-netweaver-poc-war</artifactId>
+                            <uri>spring-uri</uri>
                             <contextRoot>/</contextRoot>
                             <bundleFileName>spring-netweaver-poc-war</bundleFileName>
                         </webModule>
