@@ -30,7 +30,7 @@ public class DataConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         EclipseLinkJpaVendorAdapter vendorAdapter = new EclipseLinkJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(false);
@@ -38,15 +38,15 @@ public class DataConfig {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("com.spring.poc");
-        factory.setDataSource(dataSource());
+        factory.setDataSource(dataSource);
         factory.setJpaProperties(jpaProperties());
         return factory;
     }
 
     @Bean
-    public JpaTransactionManager transactionManager() {
+    public JpaTransactionManager transactionManager(DataSource dataSource) {
         JpaTransactionManager txManager = new JpaTransactionManager();
-        txManager.setEntityManagerFactory(entityManagerFactory().getObject());
+        txManager.setEntityManagerFactory(entityManagerFactory(dataSource).getObject());
         return txManager;
     }
 
@@ -59,7 +59,8 @@ public class DataConfig {
         Properties jpaProperties = new Properties();
         jpaProperties.put(PersistenceUnitProperties.CACHE_SHARED_DEFAULT, "false");
         jpaProperties.put(PersistenceUnitProperties.SCHEMA_GENERATION_DATABASE_ACTION, "drop-and-create");
-        jpaProperties.put(PersistenceUnitProperties.SCHEMA_GENERATION_SQL_LOAD_SCRIPT_SOURCE, "/ddl-scripts/data.sql");
+        jpaProperties.put(PersistenceUnitProperties.SCHEMA_GENERATION_DROP_AND_CREATE_ACTION, "/sql-scripts/create.sql");
+        jpaProperties.put(PersistenceUnitProperties.SCHEMA_GENERATION_SQL_LOAD_SCRIPT_SOURCE, "/sql-scripts/insert.sql");
         jpaProperties.put(PersistenceUnitProperties.DDL_GENERATION, "create-or-extend-tables");
         jpaProperties.put(PersistenceUnitProperties.DDL_GENERATION_MODE, "database");
         jpaProperties.put(PersistenceUnitProperties.WEAVING, "false");
