@@ -2,52 +2,50 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    
     <parent>
         <groupId>com.spring.poc</groupId>
         <artifactId>spring-netweaver-poc</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    
     <artifactId>spring-netweaver-poc-ear</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>ear</packaging>
-    <description>Demo project for Spring Boot</description>
-    <name>spring-netweaver-poc-ear</name>
-
+    
     <dependencies>
         <dependency>
             <groupId>com.spring.poc</groupId>
             <artifactId>spring-netweaver-poc-war</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
             <type>war</type>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
-
+    
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <artifactId>maven-ear-plugin</artifactId>
-                <version>3.0.2</version>
                 <configuration>
-                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <displayName>spring-netweaver-poc</displayName>
+                    <description>spring-netweaver-poc</description>
                     <skinnyWars>true</skinnyWars>
-                    <applicationName>spring-netweaver-poc-ear</applicationName>
-                    <displayName>SpringNetweaverEar</displayName>
-                    <finalName>spring-netweaver-poc-ear</finalName>
+                    <version>5</version>
                     <modules>
                         <webModule>
                             <groupId>com.spring.poc</groupId>
                             <artifactId>spring-netweaver-poc-war</artifactId>
-                            <uri>spring-uri</uri>
-                            <contextRoot>/</contextRoot>
-                            <bundleFileName>spring-netweaver-poc-war</bundleFileName>
+                            <contextRoot>/spring-poc</contextRoot>
                         </webModule>
                     </modules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    
 </project>
