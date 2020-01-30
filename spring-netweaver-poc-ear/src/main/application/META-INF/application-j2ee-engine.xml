@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE application-j2ee-engine SYSTEM "application-j2ee-engine.dtd">
 <application-j2ee-engine>
+    <reference reference-type="hard" prepend="true" >
+        <reference-target provider-name="sap.com" target-type="library">javax~persistence~api~20</reference-target>
+    </reference>
     <start-up mode="always" />
     <fail-over-enable mode="disable"/>
 </application-j2ee-engine>

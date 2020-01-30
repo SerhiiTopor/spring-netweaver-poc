@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/rest-api/v1/users")
+@RequestMapping(value = "/custom/users")
 public class UserController {
 
     private final UserManagementUseCase userManagement;
