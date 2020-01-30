@@ -2,7 +2,7 @@
 
 artifact deploy undeploy command:
 
-**deploy:** deploy D:\spring-netweaver-poc-ear-0.0.1-SNAPSHOT.ear on_prerequisite_error=stop version_rule=all**
+**deploy:** deploy {Disk}:{Path}\spring-netweaver-poc-ear-0.0.1-SNAPSHOT.ear on_prerequisite_error=stop version_rule=all**
 
 **undeploy:** undeploy  vendor=JavaEE name=spring-netweaver-poc
 
