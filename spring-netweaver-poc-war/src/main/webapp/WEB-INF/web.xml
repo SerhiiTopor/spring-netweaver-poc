@@ -26,6 +26,16 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>RepositoryRestExporterServlet</servlet-name>
+        <servlet-class>org.springframework.data.rest.webmvc.RepositoryRestExporterServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RepositoryRestExporterServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>ODataServlet</servlet-name>
         <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
         <init-param>

@@ -15,10 +15,10 @@ import java.util.Map;
 @RequestMapping("/hello")
 public class HelloSpring {
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView showHelloSpring(@PathVariable String greeting) {
+    @RequestMapping(value = "/{name}",method = RequestMethod.GET)
+    public ModelAndView showHelloSpring(@PathVariable String name) {
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("greeting", greeting);
+        modelAndView.addObject("name", name);
         return modelAndView;
     }
 
