@@ -18,3 +18,5 @@ artifact deploy undeploy command:
 ```
 <reference-target provider-name="sap.com" target-type="library">javax~persistence~api~20</reference-target>
 ``` 
+
+**If you want use oData** in this project with JPA provider, it can be more sense in using eclipse-link, cause olingo has better support of it
