@@ -10,7 +10,7 @@ artifact deploy undeploy command:
 
 **DataConfig** class defines DataSource and JPA provider implementation
 
-**Attention** property SCHEMA_GENERATION_DATABASE_ACTION: "drop-and-create" drops schema when app restarts
+**Attention:** property SCHEMA_GENERATION_DATABASE_ACTION: "drop-and-create" drops schema when app restarts
 
 **WebConfig** class defines ViewResolver bean for jsp processing
 
