@@ -14,5 +14,7 @@ artifact deploy undeploy command:
 
 **WebConfig** class defines ViewResolver bean for jsp processing
 
-**application-j2ee-engine.xml** 
-<reference-target provider-name="sap.com" target-type="library">javax~persistence~api~20</reference-target> is mandatory for ORM systems
+**application-j2ee-engine.xml** is mandatory for ORM systems:
+```
+<reference-target provider-name="sap.com" target-type="library">javax~persistence~api~20</reference-target>
+``` 
